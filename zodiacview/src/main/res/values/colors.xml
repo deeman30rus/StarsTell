@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="zodiac_view_text_color">#fff</color>
+    <color name="zodiac_view_background_color">#000</color>
+</resources>
