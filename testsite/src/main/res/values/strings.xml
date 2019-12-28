@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TestSite</string>
+    <string name="testsite_menu_caption">Test Site</string>
+</resources>
