@@ -7,7 +7,7 @@
     android:background="#000"
     tools:context=".MainActivity">
 
-    <com.delizarov.starstell.SkyTube
+    <com.delizarov.starstell.SkyBoxView
         android:id="@+id/sky_tube"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

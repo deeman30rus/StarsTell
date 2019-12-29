@@ -14,7 +14,7 @@ private const val VELOCITY_THRESHOLD = 10
 
 class MainActivity : AppCompatActivity() {
 
-    private val skyTube: SkyTube by ActivityViewProperty(R.id.sky_tube)
+    private val skyBoxView: SkyBoxView by ActivityViewProperty(R.id.sky_tube)
     private val zodiacView: ZodiacView by ActivityViewProperty(R.id.zodiac_view)
 
     private lateinit var gestureDetector: GestureDetector
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        if (!skyTube.isSupported) {
+        if (!skyBoxView.isSupported) {
             Toast.makeText(this, "Not supported", Toast.LENGTH_SHORT).show()
         }
     }

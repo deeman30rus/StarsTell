@@ -2,12 +2,9 @@ package com.delizarov.testsite
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.delizarov.testsite.fragments.BaseFragment
-import com.delizarov.testsite.fragments.MainMenuFragment
-import com.delizarov.testsite.fragments.WidgesFragment
+import com.delizarov.testsite.fragments.*
 import com.delizarov.testsite.navigation.FragmentFactory
 import com.delizarov.testsite.navigation.Navigator
-import java.util.*
 
 class TestSiteActivity : AppCompatActivity() {
 
@@ -38,7 +35,19 @@ class TestSiteActivity : AppCompatActivity() {
         }
 
         override fun navigateToWidgets(args: Bundle) {
-            val fragment = factory.create<WidgesFragment>(args)
+            val fragment = factory.create<WidgetsFragment>(args)
+
+            navigateTo(fragment)
+        }
+
+        override fun navigateToZodiacView(args: Bundle) {
+            val fragment = factory.create<ZodiacViewFragment>(args)
+
+            navigateTo(fragment)
+        }
+
+        override fun navigateToSkyBox(args: Bundle) {
+            val fragment = factory.create<SkyBoxFragment>(args)
 
             navigateTo(fragment)
         }

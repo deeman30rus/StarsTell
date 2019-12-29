@@ -2,8 +2,10 @@ package com.delizarov.testsite.fragments
 
 import com.delizarov.testsite.R
 
-class WidgesFragment : BaseFragment() {
+class ZodiacViewFragment : BaseFragment() {
 
     override val layoutRes: Int
-        get() = R.layout.fragment_widgets
+        get() = R.layout.fragment_zodiac_view
+
+
 }
