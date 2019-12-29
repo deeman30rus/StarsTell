@@ -1,16 +1,15 @@
-package com.delizarov.starstell
+package com.delizarov.skybox
 
 import android.app.ActivityManager
 import android.content.Context
-import android.opengl.GLES20.*
-
+import android.opengl.GLES20
 import android.opengl.GLSurfaceView
 import android.util.AttributeSet
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
 
-class SkyTube(context: Context, attrs: AttributeSet?) :
+class SkyBoxView(context: Context, attrs: AttributeSet?) :
     GLSurfaceView(context, attrs) {
 
     constructor(context: Context) : this(context, null)
@@ -31,14 +30,14 @@ class SkyTube(context: Context, attrs: AttributeSet?) :
 
 class SkyTubeRenderer : GLSurfaceView.Renderer {
     override fun onDrawFrame(gl: GL10?) {
-        glClear(GL_COLOR_BUFFER_BIT)
+        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
     }
 
     override fun onSurfaceChanged(gl: GL10?, width: Int, height: Int) {
-        glViewport(0, 0, width, height)
+        GLES20.glViewport(0, 0, width, height)
     }
 
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {
-        glClearColor(0.056f, 0.15f, 0.4f, 0f)
+        GLES20.glClearColor(0.056f, 0.15f, 0.4f, 0f)
     }
 }
