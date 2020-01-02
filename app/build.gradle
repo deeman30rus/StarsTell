@@ -36,6 +36,7 @@ dependencies {
 
     implementation project(':zodiacview')
     implementation project(':core')
+    implementation project(':skybox')
 
     // Koin AndroidX Scope features
     implementation "org.koin:koin-androidx-scope:$koin_version"

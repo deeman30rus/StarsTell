@@ -1,17 +1,23 @@
 package com.delizarov.testsite.fragments
 
+import android.content.Context
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
+import android.opengl.Matrix
 import android.os.Bundle
-import android.view.View
-import android.widget.FrameLayout
 import com.delizarov.core.FragmentViewProperty
 import com.delizarov.skybox.SkyBoxView
 import com.delizarov.testsite.R
 
-class SkyBoxFragment : BaseFragment() {
+class SkyBoxFragment : BaseFragment(), SensorEventListener {
 
-    private val layout: FrameLayout by FragmentViewProperty(R.id.container)
+    private val skyboxView: SkyBoxView by FragmentViewProperty(R.id.skybox)
 
-    private lateinit var skyBoxView: SkyBoxView
+    private lateinit var sensorManager: SensorManager
+    private lateinit var sensor: Sensor
+    private var rotationMatrix = FloatArray(16)
 
     override val layoutRes: Int
         get() = R.layout.fragment_sky_box
@@ -20,17 +26,28 @@ class SkyBoxFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        skyBoxView = SkyBoxView(context!!).apply {
-            layoutParams = FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.MATCH_PARENT
-            )
+        sensorManager = context!!.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
+        Matrix.setIdentityM(rotationMatrix, 0)
+    }
+
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) { /* do nothing */ }
+
+    override fun onSensorChanged(event: SensorEvent?) {
+        SensorManager.getRotationMatrixFromVector(rotationMatrix, event!!.values)
+        skyboxView.queueEvent {
+            skyboxView.setRotationMatrix(rotationMatrix)
         }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onPause() {
+        super.onPause()
+        sensorManager.unregisterListener(this)
+    }
 
-        layout.addView(skyBoxView)
+    override fun onResume() {
+        super.onResume()
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME)
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="fragment_skybox">
+        precision mediump float;\n
+
+        uniform samplerCube u_TextureUnit;\n
+        varying vec3 v_Position; \n
+        \n
+        void main() {\n
+            gl_FragColor = textureCube(u_TextureUnit, v_Position);\n
+        }\n
+
+    </string>
+    <string name="vertex_skybox">
+        uniform mat4 u_Matrix;\n
+        attribute vec3 a_Position;\n
+        varying vec3 v_Position;\n
+
+        void main() {\n
+            v_Position = a_Position;\n
+            v_Position.z = -v_Position.z;\n
+
+            gl_Position = u_Matrix * vec4(a_Position, 1.0);\n
+            gl_Position = gl_Position.xyww;\n
+        } \n
+    </string>
+
+</resources>
