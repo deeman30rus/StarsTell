@@ -51,5 +51,11 @@ class TestSiteActivity : AppCompatActivity() {
 
             navigateTo(fragment)
         }
+
+        override fun navigateToParallaxView(args: Bundle) {
+            val fragment = factory.create<ParallaxViewFragment>(args)
+
+            navigateTo(fragment)
+        }
     }
 }

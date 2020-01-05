@@ -12,6 +12,7 @@ class FragmentFactory {
             WidgetsFragment::class.java -> WidgetsFragment()
             ZodiacViewFragment::class.java -> ZodiacViewFragment()
             SkyBoxFragment::class.java -> SkyBoxFragment()
+            ParallaxViewFragment::class.java -> ParallaxViewFragment()
             else -> throw IllegalArgumentException("Fragment key ${T::class} not supported")
         }
 

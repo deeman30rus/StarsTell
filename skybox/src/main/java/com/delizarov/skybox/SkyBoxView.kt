@@ -21,6 +21,7 @@ class SkyBoxView(context: Context, attrs: AttributeSet?) :
         setRenderer(renderer)
     }
 
+    //todo выташить в extended метод
     val isSupported: Boolean
         get() {
             val am = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager

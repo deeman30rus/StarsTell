@@ -1,2 +1,2 @@
-include ':app', ':zodiacview', ':testsite', ':core', ':skybox'
+include ':app', ':zodiacview', ':testsite', ':core', ':skybox', ':parallaxview'
 rootProject.name='StarsTell'

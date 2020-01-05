@@ -28,5 +28,13 @@
         android:layout_marginTop="16dp"
         android:text="@string/test_site_sky_box_caption" />
 
+    <Button
+        android:id="@+id/parallax_view"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        style="?android:borderlessButtonStyle"
+        android:layout_marginTop="16dp"
+        android:text="@string/test_site_parallax_view_label" />
+
 
 </LinearLayout>

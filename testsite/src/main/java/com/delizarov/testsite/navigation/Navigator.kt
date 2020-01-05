@@ -11,4 +11,6 @@ interface Navigator {
     fun navigateToZodiacView(args: Bundle = Bundle())
 
     fun navigateToSkyBox(args: Bundle = Bundle())
+
+    fun navigateToParallaxView(args: Bundle = Bundle())
 }
