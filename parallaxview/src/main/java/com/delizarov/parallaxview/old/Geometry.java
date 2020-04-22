@@ -1,4 +1,4 @@
-package com.delizarov.parallaxview;
+package com.delizarov.parallaxview.old;
 
 public class Geometry {
     public static class Point {

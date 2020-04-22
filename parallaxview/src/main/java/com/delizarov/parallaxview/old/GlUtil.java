@@ -1,4 +1,4 @@
-package com.delizarov.parallaxview;
+package com.delizarov.parallaxview.old;
 
 import android.content.Context;
 import android.content.res.AssetManager;

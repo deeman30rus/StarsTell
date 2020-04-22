@@ -1,4 +1,4 @@
-package com.delizarov.parallaxview;
+package com.delizarov.parallaxview.old;
 
 public class MatrixHelper {
     public static void perspectiveM(float[] m, float yFovInDegrees, float aspect,

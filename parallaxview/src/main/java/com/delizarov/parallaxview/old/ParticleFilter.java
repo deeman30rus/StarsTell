@@ -1,9 +1,11 @@
-package com.delizarov.parallaxview;
+package com.delizarov.parallaxview.old;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
+
+import com.delizarov.parallaxview.R;
 
 import java.nio.FloatBuffer;
 import java.util.Random;

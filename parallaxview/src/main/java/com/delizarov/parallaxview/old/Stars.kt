@@ -1,9 +1,10 @@
-package com.delizarov.parallaxview
+package com.delizarov.parallaxview.old
 
 import android.content.Context
 import android.graphics.Color
 import android.opengl.GLES20
 import android.opengl.Matrix
+import com.delizarov.parallaxview.R
 import kotlin.random.Random
 
 private fun vector() = FloatArray(4)
@@ -81,7 +82,10 @@ class Stars(
         directionVectorLocation = GLES20.glGetAttribLocation(programId, "a_DirectionVector")
         particleStartTimeLocation = GLES20.glGetAttribLocation(programId, "a_ParticleStartTime")
 
-        textureId = TextureHelper.loadTexture(context, R.drawable.particle_texture)
+        textureId = TextureHelper.loadTexture(
+            context,
+            R.drawable.particle_texture
+        )
     }
 
     fun setSize(width: Int, height: Int) {
@@ -109,22 +113,31 @@ class Stars(
 
     private fun bindData() {
         var offset = 0
-        bind(offset, positionLocation, POSITION_COMPONENT_COUNT)
+        bind(offset, positionLocation,
+            POSITION_COMPONENT_COUNT
+        )
         offset += POSITION_COMPONENT_COUNT
 
-        bind(offset, colorLocation, COLOR_COMPONENT_COUNT)
+        bind(offset, colorLocation,
+            COLOR_COMPONENT_COUNT
+        )
         offset += COLOR_COMPONENT_COUNT
 
-        bind(offset, directionVectorLocation, VECTOR_COMPONENT_COUNT)
+        bind(offset, directionVectorLocation,
+            VECTOR_COMPONENT_COUNT
+        )
         offset += VECTOR_COMPONENT_COUNT
 
-        bind(offset, particleStartTimeLocation, PARTICLE_START_TIME_COMPONENT_COUNT)
+        bind(offset, particleStartTimeLocation,
+            PARTICLE_START_TIME_COMPONENT_COUNT
+        )
     }
 
     private fun bind(offset: Int, location: Int, count: Int) {
         vertexBuffer.position(offset)
         GLES20.glEnableVertexAttribArray(location)
-        GLES20.glVertexAttribPointer(location, count, GLES20.GL_FLOAT, false, STRIDE, vertexBuffer)
+        GLES20.glVertexAttribPointer(location, count, GLES20.GL_FLOAT, false,
+            STRIDE, vertexBuffer)
         vertexBuffer.position(0)
     }
 
@@ -178,7 +191,9 @@ class Stars(
         stars[curOffset] = startTime
 
         vertexBuffer.position(offset)
-        vertexBuffer.put(stars, offset, TOTAL_COMPONENT_COUNT)
+        vertexBuffer.put(stars, offset,
+            TOTAL_COMPONENT_COUNT
+        )
         vertexBuffer.position(0)
     }
 

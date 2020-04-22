@@ -2,9 +2,9 @@ package com.delizarov.parallaxview
 
 import android.content.Context
 import android.graphics.BitmapFactory
-import android.opengl.GLES20
 import android.opengl.GLES20.*
 import android.opengl.GLUtils
+import com.delizarov.parallaxview.old.createProgramId
 
 private fun vector() = FloatArray(4)
 private fun matrix() = FloatArray(16)
@@ -65,12 +65,10 @@ class DeepSpaceTexture(
         this.height = height
 
         val ratio = width.toFloat() / height.toFloat()
-        MatrixHelper.perspectiveM(projectionMatr, 45f, ratio, 1f, 300f)
+//        MatrixHelper.perspectiveM(projectionMatr, 45f, ratio, 1f, 300f)
     }
 
     fun draw() {
 
     }
-
-
 }

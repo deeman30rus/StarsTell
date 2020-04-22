@@ -1,4 +1,4 @@
-package com.delizarov.parallaxview
+package com.delizarov.parallaxview.old
 
 import android.opengl.GLES30
 import android.util.Log
