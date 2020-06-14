@@ -32,8 +32,7 @@ class Compass(
 
     fun stopReadings() = unregisterListeners()
 
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) { /* do nothing */
-    }
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) = Unit
 
     override fun onSensorChanged(event: SensorEvent) {
         SensorManager.getRotationMatrixFromVector(rotationMatrix, event.values)

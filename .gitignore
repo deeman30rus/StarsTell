@@ -9,3 +9,5 @@ local.properties
 /core/build/
 /skybox/build/
 /zodiacview/build/
+/parallaxview/build/
+/testsite/build/
