@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="zodiac_view_const_16dp">16dp</dimen>
+    <dimen name="zodiac_view_const_9dp">9dp</dimen>
+    <dimen name="zodiac_view_const_8dp">8dp</dimen>
+    <dimen name="zodiac_view_const_7dp">7dp</dimen>
+    <dimen name="zodiac_view_const_6dp">6dp</dimen>
+    <dimen name="zodiac_view_const_5dp">5dp</dimen>
+    <dimen name="zodiac_view_const_4dp">4dp</dimen>
+    <dimen name="zodiac_view_const_2dp">2dp</dimen>
+    <dimen name="zodiac_view_const_1dp">1dp</dimen>
+
+    <dimen name="zodiac_view_text_size">29sp</dimen>
+
+    <dimen name="zodiac_view_main_sign_text_margin">12dp</dimen>
+    <dimen name="zodiac_view_main_sign_top_margin">8dp</dimen>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestSite</string>
+    <string name="testsite_menu_caption">Test Site</string>
+    <string name="test_site_widgets_caption">widgets</string>
+    <string name="test_site_zodiac_view_caption">Zodiac View</string>
+    <string name="test_site_sky_box_caption">Sky box</string>
+    <string name="test_site_parallax_view_label">Parallax view</string>
+</resources>

@@ -1,0 +1,13 @@
+.gitignore
+*.iml
+.idea
+.gradle
+gradle/
+local.properties
+/gradlew
+/gradlew.bat
+/core/build/
+/skybox/build/
+/zodiacview/build/
+/parallaxview/build/
+/testsite/build/
