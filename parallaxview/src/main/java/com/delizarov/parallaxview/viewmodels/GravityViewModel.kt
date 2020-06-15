@@ -1,4 +1,4 @@
-package com.delizarov.parallaxview
+package com.delizarov.parallaxview.viewmodels
 
 import com.delizarov.parallaxview.physics.Vector
 
@@ -6,7 +6,7 @@ private const val ANIMATIONS_FRAMES = 30f
 
 private const val G = 9.81f
 
-class GravityViewModel(
+internal class GravityViewModel(
     private val ampX: Int,
     private val ampY: Int
 ) {

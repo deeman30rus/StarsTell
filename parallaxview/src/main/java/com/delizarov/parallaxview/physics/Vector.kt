@@ -4,7 +4,7 @@ import kotlin.math.abs
 
 private const val EPS = 10e-4
 
-class Vector(
+internal class Vector(
     var x: Float = 0f,
     var y: Float = 0f
 ) {
