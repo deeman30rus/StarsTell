@@ -44,9 +44,8 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    implementation project(':zodiacview')
     implementation project(':core')
-    implementation project(':skybox')
+    implementation project(':feature-forecast')
 
     // Koin AndroidX Scope features
     implementation "org.koin:koin-androidx-scope:$koin_version"

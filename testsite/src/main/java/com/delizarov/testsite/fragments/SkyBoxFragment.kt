@@ -7,13 +7,15 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.opengl.Matrix
 import android.os.Bundle
-import com.delizarov.core.FragmentViewProperty
+import com.delizarov.core.viewproperties.FragmentViewProperty
 import com.delizarov.skybox.SkyBoxView
 import com.delizarov.testsite.R
 
 class SkyBoxFragment : BaseFragment(), SensorEventListener {
 
-    private val skyboxView: SkyBoxView by FragmentViewProperty(R.id.skybox)
+    private val skyboxView: SkyBoxView by FragmentViewProperty(
+        R.id.skybox
+    )
 
     private lateinit var sensorManager: SensorManager
     private lateinit var sensor: Sensor

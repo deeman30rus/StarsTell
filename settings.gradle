@@ -1,2 +1,3 @@
+include ':feature-forecast'
 include ':app', ':zodiacview', ':testsite', ':core', ':skybox', ':parallaxview'
 rootProject.name='StarsTell'
