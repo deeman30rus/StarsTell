@@ -11,6 +11,8 @@ import android.view.View
 import androidx.annotation.IntDef
 import androidx.core.animation.doOnEnd
 
+typealias OnSignChanged = (ZodiacSign) -> Unit
+
 internal const val DIRECTION_TO_PREV = 1
 internal const val DIRECTION_TO_NEXT = 2
 
@@ -28,10 +30,13 @@ class ZodiacView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
 
     constructor(context: Context) : this(context, null)
 
-    private var sign = ZodiacSign.Pisces
+    var sign = ZodiacSign.Pisces
+    private set
     private var viewState: ViewState = StaticViewState(context.resources, sign)
 
     private var renderer = Renderer(context.resources)
+
+    private var onSignChanged: OnSignChanged? = null
 
     override fun onDraw(canvas: Canvas?) {
         canvas?.let {
@@ -39,10 +44,15 @@ class ZodiacView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         }
     }
 
+    fun setOnSignChanged(callback: OnSignChanged) {
+        onSignChanged = callback
+    }
+
     fun nextSign() {
         ValueAnimator.ofInt(100).apply {
             doOnEnd {
                 sign = sign.next()
+                onSignChanged?.invoke(sign)
             }
             addUpdateListener { animator ->
                 viewState = AnimationViewState(
@@ -62,6 +72,7 @@ class ZodiacView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         ValueAnimator.ofInt(100).apply {
             doOnEnd {
                 sign = sign.prev()
+                onSignChanged?.invoke(sign)
             }
             addUpdateListener { animator ->
                 viewState = AnimationViewState(

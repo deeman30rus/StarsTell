@@ -2,7 +2,7 @@ package com.delizarov.zodiacview
 
 import androidx.annotation.StringRes
 
-internal enum class ZodiacSign(
+enum class ZodiacSign(
     @StringRes var titleRes: Int
 ) {
 
