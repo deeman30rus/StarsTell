@@ -32,6 +32,8 @@ abstract class BaseFragment : Fragment(), LifecycleOwner {
         super.onViewCreated(view, savedInstanceState)
 
         bindViewProperties()
+
+        subscribers.notifyOnCreated()
     }
 
     override fun onDestroyView() {
@@ -39,7 +41,7 @@ abstract class BaseFragment : Fragment(), LifecycleOwner {
 
         unbindViewProperties()
 
-        subscribers.notifyOnCreated()
+        subscribers.notifyOnDestroyed()
     }
 
     override fun onStart() {

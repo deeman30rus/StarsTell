@@ -2,9 +2,9 @@ package com.delizarov.core.mvp
 
 import com.delizarov.core.Subscription
 
-class MVPFeature <TView: IView, TPresenter : Presenter<TView>> (
-    private val presenter: TPresenter,
-    private val view: TView
+abstract class MVPFeature <TView: IView, TPresenter : Presenter<TView>> (
+    val presenter: TPresenter,
+    val view: TView
 ) {
 
     private var subscription: Subscription? = null
@@ -27,5 +27,4 @@ class MVPFeature <TView: IView, TPresenter : Presenter<TView>> (
         subscription?.close()
         subscription = null
     }
-    
 }
